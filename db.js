@@ -1,15 +1,18 @@
-const mysql = require('mysql2/promise')
+const mysql = require('mysql2')
 
-async function connectDB(){
-    const connection = await mysql.createConnection({
-        host:'localhost',
-        user:'root',
-        password:'cesar',
-        database:'test'
-    })
-    
-    const result = await connection.query('SELECT 1+1 AS RESULT')
-    console.log(result)
-}
+const connection = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: 'cesar',
+    database: 'test'
+})
 
-module.exports = connectDB
+connection.connect(function (error) {
+    if (error) {
+        throw error
+    } else {
+        console.log("Conexion exitosa")
+    }
+})
+
+module.exports = connection
