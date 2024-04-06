@@ -1,6 +1,8 @@
 const express = require('express')
+const cors = require('cors')
 const app = express()
 app.use(express.json())
+app.use(cors())
 const connection = require('./db')
 
 app.listen(3000)
@@ -15,7 +17,7 @@ app.post('/api/contacto',function(req,res){
     let data={
         NombreCompleto:req.body.NombreCompleto,
         NombreEmpresa:req.body.NombreEmpresa,
-        CorreoElectronico:req.body.CorreoElectronico,
+        CorreoElectronico:req.body.Correo,
         Telefono:req.body.Telefono,
         Categoria:req.body.Categoria,
         Mensaje:req.body.Mensaje}
