@@ -18,7 +18,7 @@ app.post('/api/contacto',function(req,res){
     let data={
         NombreCompleto:req.body.NombreCompleto,
         NombreEmpresa:req.body.NombreEmpresa,
-        CorreoElectronico:req.body.Correo,
+        CorreoElectronico:req.body.CorreoElectronico,
         Telefono:req.body.Telefono,
         Categoria:req.body.Categoria,
         Mensaje:req.body.Mensaje}
